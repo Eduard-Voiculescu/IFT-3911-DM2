@@ -1,3 +1,146 @@
-on ne peut pas modifier un type de transport, une fois qu'on a crée un type de transport (avion, bateau ou train) on assume qu'on ne peut pu le modifier. 
-Sauf pour le id, mais on ne voit pas pourquoi un type de transport voudrait changer de id. Il n'y a pas de bu. Donc une fois le type de transport créer
-il reste tel quel. C'est un objet immutable.
+
+<!-- saved from url=(0060)http://www-ens.iro.umontreal.ca/~syriani/courses/rapport.htm -->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/main.css"/>
+        <style id="stndz-style">
+        </style>
+    <title>IFT3911 DM2 - Hiv 2019</title>
+</head>
+    <body>
+        <h6 style="text-align: center;">Dans ce document, l’emploi du masculin pour désigner des personnes n’a d’autres fins que celle d’alléger le texte.</h6>
+        <h2>
+            Information générale</h2>
+        <p>
+            <span style="font-weight: bold;">Nom: </span>EID Alain
+            <br>
+            <span style="font-weight: bold;">Matricule: </span>20061065
+            <br>
+            <span style="font-weight: bold;">Courriel: </span>alain.eid@umontreal.ca
+            <br>
+            <span style="font-weight: bold;">temps mis: </span>22 heures
+        </p>
+        <p>
+            <span style="font-weight: bold;">Nom: </span>STEENHAUT Sami
+            <br>
+            <span style="font-weight: bold;">Matricule: </span>20061630
+            <br>
+            <span style="font-weight: bold;">Courriel: </span>sami.steenhaut@umontreal.ca
+            <br>
+            <span style="font-weight: bold;">temps mis: </span>23 heures
+        </p>
+        <p>
+            <span style="font-weight: bold;">Nom: </span>VOICULESCU Eduard
+            <br>
+            <span style="font-weight: bold;">Matricule: </span>20078235
+            <br>
+            <span style="font-weight: bold;">Courriel: </span>eduard.voiculescu@umontreal.ca
+            <br>
+            <span style="font-weight: bold;">temps mis: </span>25 heures
+        </p>
+        <h2>
+            Distribution des tâches</h2>
+        <p>
+            <span style="font-weight: bold;">Soumetteur: </span>VOICULESCU Eduard
+        </p>
+        <table cellpadding="7px">
+            <thead>
+                <tr>
+                    <th class="first_col">
+                        Tâche
+                    </th>
+                    <th>
+                        Alain
+                    </th>
+                    <th>
+                        Sami
+                    </th>
+                    <th>
+                        Eduard
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="first_col">
+                        Design logiciel [55%] :<br>
+                        <ul>
+                            <li>Diagramme de classe [20%]</li>
+                            <li>Diagrammes de séquence ou de collaboration [15%]<br>
+                                <ul>
+                                    <li>vérifier les vols/itinéraires disponibles</li>
+                                    <li>réserver un siège/cabine</li>
+                                    <li>payer un siège/cabine</li>
+                                    <li>annuler une réservation</li>
+                                    <li>changer une réservation</li>
+                                </ul>
+                            </li>
+                            <li>Diagramme de paquets [8%]</li>
+                            <li>Contraintes OCL [7%]<br>
+                                <ul>
+                                    <li>Le port de départ et d'arrivée doit être le même [OCL].</li>
+                                    <li>Un paquebot peut être assigné à plusieurs itinéraires tant qu'ils ne se chevauchent pas [OCL].</li>
+                                    <li>Réserver ne peut se faire que pour un siège/cabine libre [OCL].</li>
+                                </ul>
+                            </li>
+                            <li>Identifications des modules réutilisables [5%]</li>
+                        </ul>
+                    </td>
+                    <td>
+                        33%
+                    </td>
+                    <td>
+                        33%
+                    </td>
+                    <td>
+                        33%
+                    </td>
+                </tr>
+                <tr>
+                    <td class="first_col">
+                        Qualité du design [45%]: <br>
+                        <ul>
+                            <li>Discussion du couplage et de la cohésion des modules [10%]</li>
+                            <li>Discussion du fardeau des classes [10%]</li>
+                            <li>Graphe IA et justification [10%]</li>
+                            <li>Justification de l'application des principes de conception [15%]</li>
+                        </ul>
+                    </td>
+                    <td>30%</td>
+                    <td>30%</td>
+                    <td>40%</td>
+                </tr>
+                <tr>
+                    <td class="first_col">
+                        Justifications ? (voir plus bas)
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="first_col">
+                        Bonus (pas de note partielle) [10%]
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>
+            Justifications: 
+        </h3>
+        <ul>
+            <li>
+                Comme détail d'implémentation, nous avons décidé d'omettre les fonctions pour modifier un transport tel quel. 
+                Disons que nous avons un train, un avion ou un paquebot, il est possible de les créer et de les supprimer du système
+                mais on ne peut pas les modifier. La seule chose qui pourrait être modifié serai le id du transport. Mais nous ne voyons
+                pas le but de permettre cela. Une fois que nous avons un moyen de transport, ce dernier sera prséent dans le système pour
+                un bon nombre d'année (bris/problème quelconque/etc.). Nous avons surtout vue cela que lorsque les ingénieurs
+                d'une compagnie quelconque construisent un transport, on peut pas les modifier. C'est des objet immutables.
+            </li>
+        </ul>
+    </body>
+</html>
