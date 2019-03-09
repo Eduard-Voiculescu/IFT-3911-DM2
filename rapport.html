@@ -44,10 +44,10 @@
         <p>
             <span style="font-weight: bold;">Soumetteur: </span>VOICULESCU Eduard
         </p>
-        <table cellpadding="7px">
+        <table class="item">
             <thead>
                 <tr>
-                    <th class="first_col">
+                    <th>
                         Tâche
                     </th>
                     <th>
@@ -63,7 +63,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="first_col">
+                    <td>
                         Design logiciel [55%] :<br>
                         <ul>
                             <li>Diagramme de classe [20%]</li>
@@ -98,7 +98,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="first_col">
+                    <td>
                         Qualité du design [45%]: <br>
                         <ul>
                             <li>Discussion du couplage et de la cohésion des modules [10%]</li>
@@ -112,7 +112,7 @@
                     <td>40%</td>
                 </tr>
                 <tr>
-                    <td class="first_col">
+                    <td>
                         Justifications ? (voir plus bas)
                     </td>
                     <td></td>
@@ -120,7 +120,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="first_col">
+                    <td>
                         Bonus (pas de note partielle) [10%]
                     </td>
                     <td></td>
@@ -129,6 +129,440 @@
                 </tr>
             </tbody>
         </table>
+        
+        <!-- Début section : Design logiciel-->
+        <h3>Design logiciel:</h3>
+        
+        <h4>Diagramme de classe: </h4>
+        <img src="design/ClassDiagram.jpg"/>
+        <h4>Diagramme de séquence ou de collaboration:</h4>
+        <p>Vérifier les vols/itinéraires disponibles</p>
+        <img src=""/>
+        <p>Réserver un siège/cabine</p>
+        <img src=""/>
+        <p>Payer un siège/cabine</p>
+        <img src=""/>
+        <p>Annuler une réservation</p>
+        <img src=""/>
+        <p>changer une réservation</p>
+        <img src=""/>
+        <h4>Diagramme de paquets</h4>
+        <img src=""/>
+        
+        <h4>Contraintes OCL</h4>
+        <p>Le port de départ et d'arrivée doit être le même</p>
+        <p>Un paquebot peut être assigné à plusieurs itinéraires tant qu'ils ne se chevauchent pas.</p>
+        <p>Réserver ne peut se faire que pour un siège/cabine libre.</p>
+        
+        <h4>Identifications des modules réutilisables</h4>
+        <!-- Fin section : Design logiciel-->
+
+        <!-- Début section : Qualité du design -->
+        <h3>Qualité du design:</h3>
+
+        <h3>Discussion du couplage et de la cohésion des modules</h3>
+        <h3>Discussion du fardeau des classes</h3>
+        <p>Calcul du fardeau des classes</p>
+
+        <table class="item">
+            <thead>
+                <th>Classe</th>
+                <th>Fardeau</th>
+                <th>Réutilisation</th>
+                <th>Domaine</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>User</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>UserClient</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>UserAdmin</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>UserDatabase</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>UserController</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SystemUI</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>ClientUI</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>AdminUI</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>ReservationController</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>ReservationDatabase</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Reservation</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>TransactionController</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>TransactionDatabase</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Transaction</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>TransportController</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>TransportDatabase</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Transport</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>TransportAirplane</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>TransportBoat</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>TransportTrain</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Section</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SectionCabin</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SectionCabinInterieur</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SectionCabinOcean</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SectionCabinSuite</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SectionCabinFamille</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SectionCabinDeluxe</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SectionAirplane</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SectionAirplaneFirstClass</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SectionAirplaneBuisnessClass</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SectionAirplanePremiumClass</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SectionAirplaneEconomicClass</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SectionTrain</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SectionTrainPremium</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SectionTrainEconomicClass</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SectionPlace</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SectionPlaceCabin</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SectionPlaceSeat</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SectionPlaceNarrowSeat</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SectionPlaceConfortSeat</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SectionPlaceMediumSeat</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SectionPlaceLargeSeat</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>DestinationCourseController</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>DestinationCourseDatabase</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>DestinationCourse</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>DestinationCourseFlight</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>DestinationCourseCruise</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>DestinationCourseTrain</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>ServiceController</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>ServiceDatabase</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Service</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>ServiceAirport</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>ServicePort</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>ServiceStation</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>City</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>TransportCompanyController</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>TransportCompanyDatabase</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>TransportCompany</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>TransportCompanyAirline</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>TransportCompanyCruise</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>TransportCompanyTrain</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h3>Graphe IA et justification</h3>
+        <h3>Justification de l'application des principes de conception</h3>
+        <!-- Fin section : Qualité du design -->
+
+        <!-- Début section : Justifications -->
         <h3>
             Justifications: 
         </h3>
@@ -142,5 +576,6 @@
                 d'une compagnie quelconque construisent un transport, on peut pas les modifier. C'est des objet immutables.
             </li>
         </ul>
+        <!-- Fin section : Justifications-->
     </body>
 </html>
