@@ -1,13 +1,23 @@
-table {
-    border: outset 2px black;
-    border-collapse: collapse;
+
+.item {
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+border-collapse: collapse;
+width: 100%;
 }
-th {
-    border-bottom: double 2px black;
+
+.item td, .item th {
+border: 1px solid #ddd;
+padding: 8px;
 }
-td {
-    border-bottom: solid 1px black;
-}
-.first_col {
-    border-right: double 2px black;
+
+.item tr:nth-child(even){background-color: #f2f2f2;}
+
+.item tr:hover {background-color: #ddd;}
+
+.item th {
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: left;
+background-color: #4CAF50;
+color: white;
 }
