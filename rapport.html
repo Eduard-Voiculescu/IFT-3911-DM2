@@ -738,7 +738,22 @@
         </table>
         <br>
         <img src="design/grapheIA.png" class="center"/>
+        <p>
+            Pour faire discussion sur le graphe IA, comme on peut voir dans le graphe, notre Système de Gestion de Réservation Généralisé n'est pas tout à fait parfait. 
+            Que ce soit une erreur dans l'implémentation de notre diagramme de classe ou dans notre diagramme de paquet, il y a toutefois quelques soucis.
+            Nos paquets Ui et reservation se situe très proche de la ligne de MainSequence. Les paquets Ui et reservation sont instables et sont concrets. Cela 
+            est bon, puisque dans le design de conception du logiciel, on veut se trouver le plus possible sur la droite MainSequence. Si on est pour avoir des classes
+            instabales, ces dernières doivent être concrêtes (proche du point (1,0)). Si d'une autre part, les classes sont très stables, ces classes 
+            devraient être abstaites (proche du point (0,1)). D'une autre part, les paquets section, user, destination, service et transaction sont des paquets avec aucune instabilité 
+            (ils sont stables comme paquets) et ils sont peu ou presque pas d'abstraction. Malheureusement, cela places ces paquets (section, user, destination, service et transaction) 
+            dans la "Zone of Pain" puisque leur degré d'abstraction est bas et leur degré d'instabilité est bas ou non-existant. Le paquet transport se trouve entre la 
+            "Zone of Pain" et la droite descendante de MainSequence. Pour faire part d'un commentaire, il semble que la métrique pour calculer l'abstraction d'un paquet reste 
+            assez vague en tant que telle. Un exemple serai une classe ayant 10 méthodes concretes mais ayant 1 méthode virtuelle et cette dernière serai classé 
+            comme une classe ayant seulement des méthodes virtuelles (source : https://www.cs.utexas.edu/users/downing/papers/Stability-1996.pdf).
+        </p>
+
         <p>Nous avons le paquet UI qui dépend du paquet User </p>
+
 
         <!-- Fin section : Qualité du design -->
 
