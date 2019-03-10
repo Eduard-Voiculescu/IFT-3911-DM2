@@ -146,7 +146,7 @@
         <p>Payer un siège/cabine</p>
         <img src="design/paySeat.jpg"/>
         <p>Annuler une réservation</p>
-        <img src="design/cancelReservation.jpg"/>
+        <img src="design/cancelReservation.jpg"/>7
         <p>changer une réservation</p>
         <img src="design/changeReservation.jpg"/>
         <h4>Diagramme de paquets</h4>
@@ -730,12 +730,36 @@
                     <td>Transport</td>
                 </tr>
                 <tr>
-                    <td>1</td>
+                    <td>0</td>
                     <td>0.27</td>
                     <td>Section</td>
                 </tr>
             </tbody>
         </table>
+        <h4>Résumé</h4>
+        <p>User(instabilité = 0) dépend de rien.<br><br>
+
+        UI(instabilité = 1) dépend de User(instabilité = 0) , ce qui est parfait, car UI dépend d'un paquet plus stable que lui même.<br>
+        UI(instabilité = 1) dépend de Service(instabilité = 0), ce qui est parfait, car UI dépend d'un paquet plus stable que lui même.<br>
+        UI(instabilité = 1) dépend de Destination(instabilité = 0), ce qui est parfait, car UI dépend d'un paquet plus stable que lui même.<br>
+        UI(instabilité = 1) dépend de Réservation(instabilité = 0.75), ce qui est bon, car UI dépend d'un paquet plus stable que lui même.<br>
+        UI(instabilité = 1) dépend de Transport(instabilité = 0.33), ce qui est très bien, car UI dépend d'un paquet plus stable que lui même.<br><br>
+
+        Service(instabilité = 0) dépend de rien.<br><br>
+        
+        Destination(instabilité = 0) dépend de User.<br><br>
+
+        Reservation(instabilité = 0.75) dépend de Transport(instabilité = 0.33), ce qui est bon, car UI dépend d'un paquet plus stable que lui même.<br>
+        Reservation(instabilité = 0.75) dépend de Destination(instabilité = 0), ce qui est parfait, car UI dépend d'un paquet plus stable que lui même.<br>
+        Reservation(instabilité = 0.75) dépend de Transaction(instabilité = 0), ce qui est parfait, car UI dépend d'un paquet plus stable que lui même.<br><br>
+
+        Transaction(instabilité = 0) dépend de rien.<br><br>
+
+        Transport(instabilité = 0.33) dépend de Section(instabilité = 0), ce qui est parfait, car UI dépend d'un paquet plus stable que lui même.<br><br>
+
+        Section(instabilité = 0) dépend de rien.<br><br>
+
+        En résumé, nos dépendances( au niveau de la stabilité )sont parfaites.</p>
         <br>
         <img src="design/grapheIA.png" class="center"/>
         <p>Nous avons le paquet UI qui dépend du paquet User </p>
