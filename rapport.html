@@ -129,10 +129,10 @@
                 </tr>
             </tbody>
         </table>
-        
+
         <!-- Début section : Design logiciel-->
         <h3>Design logiciel:</h3>
-        
+
         <h4>Diagramme de classe: </h4>
         <img src="design/ClassDiagram.jpg"/>
         <h4>Diagramme de séquence ou de collaboration:</h4>
@@ -148,12 +148,12 @@
         <img src=""/>
         <h4>Diagramme de paquets</h4>
         <img src=""/>
-        
+
         <h4>Contraintes OCL</h4>
         <p>Le port de départ et d'arrivée doit être le même</p>
         <p>Un paquebot peut être assigné à plusieurs itinéraires tant qu'ils ne se chevauchent pas.</p>
         <p>Réserver ne peut se faire que pour un siège/cabine libre.</p>
-        
+
         <h4>Identifications des modules réutilisables</h4>
         <!-- Fin section : Design logiciel-->
 
@@ -161,6 +161,100 @@
         <h3>Qualité du design:</h3>
 
         <h3>Discussion du couplage et de la cohésion des modules</h3>
+        <p>Cette section sera divisé en 3 sous sections.</p>
+        <ol>
+        <li>Le couplage</li>
+        <li>La cohésion</li>
+        <li>La conclusion</li>
+        </ol>
+        <h4>Le couplage</h4>
+        <p>Nous avons remarqué que nos classes pouvaient être regroupé en 3 "types" de classes. Nous avons les classes <strong>objets (abstraites et leurs enfants)</strong>, les classes de <strong>bases de données</strong> et les classes <strong>controleurs</strong>.</p>
+        <p>Pour le type des classes <strong>controleurs</strong> ainsi que les UI, nous remarquons que toutes ces classes ont comme type de couplage un couplage par paquet. La raison est que souvent nous envoyons un objet au complet au controleurs et que seulement une partie des informations de cet objet est utilisée.</p>
+        <dl>
+          <dt><strong>Classes controleurs:</strong></dt>
+          <dd>UserController</dd>
+          <dd>ServiceController</dd>
+          <dd>TransportCompanyController</dd>
+          <dd>TransportController</dd>
+          <dd>DestinationCOurseController</dd>
+          <dd>ReservationController</dd>
+          <dd>TransactionCOntroller</dd>
+        </dl>
+        <p>Pour le type des classes <strong>bases de données</strong>, nous remarquons que toutes ces classes ont comme type de couplage un couplage par données. La raison est que souvent nous envoyons un objet au complet à la base de données et elle garde TOUTES les informations de l'objet.</p>
+        <dl>
+          <dt><strong>Classes de bases de données:</strong></dt>
+          <dd>ServiceDatabase</dd>
+          <dd>TransportCompanyDatabase</dd>
+          <dd>UserDatabase</dd>
+          <dd>ServiceDatabase</dd>
+          <dd>TransactionDatabase</dd>
+          <dd>TransportDatabase</dd>
+          <dd>DestinationCourseDatabase</dd>
+          <dd>ReservationDatabase</dd>
+        </dl>
+        <p>Pour le type des classes <strong>objets (abstraites et leurs enfants):</strong>, nous remarquons que toutes ces classes ont comme type de couplage un couplage par données. La raison est que ces classes ne servent qu'à envoyé des données. On pourrait aussi penser que c'est de type par paquet, car on accède souvent à trop d'éléments de cette strature de données.</p>
+        <dl>
+          <dt><strong>Classes objets (abstraites et leurs enfants):</strong></dt>
+          <dd>Transaction</dd>
+          <dd>Reservation</dd>
+          <dd>User</dd>
+          <dd>Service</dd>
+          <dd>City</dd>
+          <dd>Transport*</dd>
+          <dd>Section*</dd>
+          <dd>SectionPlace*</dd>
+          <dd>DestinationCourse</dd>
+        </dl>
+        <p>On peut remarqué les astérix à Transport, Section et SectionPlace. Nous les avons placé là, car entre elles, ces classes ont un couplage par contrôle. La raison est que si transport n'existe pas, section n'éxiste pas et si section n'éxiste pas, sectionplace assigné à la section n'éxiste pas.Il en de même pour les classes UI, si elle n'éxiste pas, les accès aux autres classes sont impossibles.</p>
+        <dt><strong>Classes UI</strong>
+          <dd>AdminUI</dd>
+          <dd>ClientUI</dd>
+          <dd>SystemUI</dd>
+        </dt>
+        <h4>Mesure de couplage par CBO</h3>
+          <dl>
+            <dt><strong>Classes controleurs:</strong></dt>
+            <dd>UserController : 3</dd>
+            <dd>ServiceController : 3</dd>
+            <dd>TransportCompanyController : 3</dd>
+            <dd>TransportController : 3</dd>
+            <dd>DestinationCOurseController : 4</dd>
+            <dd>ReservationController : 6</dd>
+            <dd>TransactionCOntroller : 3</dd>
+          </dl>
+          <dl>
+          <dt><strong>Classes UI:</strong></dt>
+            <dd>AdminUI : 4</dd>
+            <dd>ClientUI : 2</dd>
+            <dd>SystemUI : 3</dd>
+          </dl>
+          <dl>
+            <dt><strong>Classes de bases de données:</strong></dt>
+            <dd>ServiceDatabase : 1</dd>
+            <dd>TransportCompanyDatabase : 1</dd>
+            <dd>UserDatabase : 1</dd>
+            <dd>ServiceDatabase : 1</dd>
+            <dd>TransactionDatabase : 1</dd>
+            <dd>TransportDatabase : 1</dd>
+            <dd>DestinationCourseDatabase : 1</dd>
+            <dd>ReservationDatabase : 1</dd>
+          </dl>
+          <dl>
+            <dt><strong>Classes objets (abstraites et leurs enfants):</strong></dt>
+            <dd>Transaction : 1</dd>
+            <dd>Reservation : 1</dd>
+            <dd>User : 1</dd>
+            <dd>Service : 2</dd>
+            <dd>City : 1</dd>
+            <dd>TransportCompany : 1</dd>
+            <dd>Transport* : 2</dd>
+            <dd>Section* : 2</dd>
+            <dd>SectionPlace* : 1</dd>
+            <dd>DestinationCourse : 1</dd>
+          </dl>
+        <p>On peut voir que les résultats des mesures de CBO suivent la même tendance que les types de couplages que nous avons discuté.<br>*sauf pour certaines exeptions où le couplage est très élévé* </p>
+        <p>Pour l'odre d'implémentation et la génération de code, il faudrait suivre en ordre croissant la mesure de CBO des classes à commencer par :<br> <strong>Classes objets</strong> &rarr; <strong>Classes de bases de données</strong> &rarr; <strong>Classes controleurs</strong> &rarr; <strong>Classes UI</strong></p>
+
         <h3>Discussion du fardeau des classes</h3>
         <p>Calcul du fardeau des classes</p>
 
@@ -564,11 +658,11 @@
 
         <!-- Début section : Justifications -->
         <h3>
-            Justifications: 
+            Justifications:
         </h3>
         <ul>
             <li>
-                Comme détail d'implémentation, nous avons décidé d'omettre les fonctions pour modifier un transport tel quel. 
+                Comme détail d'implémentation, nous avons décidé d'omettre les fonctions pour modifier un transport tel quel.
                 Disons que nous avons un train, un avion ou un paquebot, il est possible de les créer et de les supprimer du système
                 mais on ne peut pas les modifier. La seule chose qui pourrait être modifié serai le id du transport. Mais nous ne voyons
                 pas le but de permettre cela. Une fois que nous avons un moyen de transport, ce dernier sera prséent dans le système pour
