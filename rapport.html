@@ -746,7 +746,7 @@
         UI(instabilité = 1) dépend de Transport(instabilité = 0.33), ce qui est très bien, car UI dépend d'un paquet plus stable que lui même.<br><br>
 
         Service(instabilité = 0) dépend de rien.<br><br>
-        
+
         Destination(instabilité = 0) dépend de User.<br><br>
 
         Reservation(instabilité = 0.75) dépend de Transport(instabilité = 0.33), ce qui est bon, car UI dépend d'un paquet plus stable que lui même.<br>
@@ -763,16 +763,16 @@
         <br>
         <img src="design/grapheIA.png" class="center"/>
         <p>
-            Pour faire discussion sur le graphe IA, comme on peut voir dans le graphe, notre Système de Gestion de Réservation Généralisé n'est pas tout à fait parfait. 
+            Pour faire discussion sur le graphe IA, comme on peut voir dans le graphe, notre Système de Gestion de Réservation Généralisé n'est pas tout à fait parfait.
             Que ce soit une erreur dans l'implémentation de notre diagramme de classe ou dans notre diagramme de paquet, il y a toutefois quelques soucis.
-            Nos paquets Ui et reservation se situe très proche de la ligne de MainSequence. Les paquets Ui et reservation sont instables et sont concrets. Cela 
+            Nos paquets Ui et reservation se situe très proche de la ligne de MainSequence. Les paquets Ui et reservation sont instables et sont concrets. Cela
             est bon, puisque dans le design de conception du logiciel, on veut se trouver le plus possible sur la droite MainSequence. Si on est pour avoir des classes
-            instabales, ces dernières doivent être concrêtes (proche du point (1,0)). Si d'une autre part, les classes sont très stables, ces classes 
-            devraient être abstaites (proche du point (0,1)). D'une autre part, les paquets section, user, destination, service et transaction sont des paquets avec aucune instabilité 
-            (ils sont stables comme paquets) et ils sont peu ou presque pas d'abstraction. Malheureusement, cela places ces paquets (section, user, destination, service et transaction) 
-            dans la "Zone of Pain" puisque leur degré d'abstraction est bas et leur degré d'instabilité est bas ou non-existant. Le paquet transport se trouve entre la 
-            "Zone of Pain" et la droite descendante de MainSequence. Pour faire part d'un commentaire, il semble que la métrique pour calculer l'abstraction d'un paquet reste 
-            assez vague en tant que telle. Un exemple serai une classe ayant 10 méthodes concretes mais ayant 1 méthode virtuelle et cette dernière serai classé 
+            instabales, ces dernières doivent être concrêtes (proche du point (1,0)). Si d'une autre part, les classes sont très stables, ces classes
+            devraient être abstaites (proche du point (0,1)). D'une autre part, les paquets section, user, destination, service et transaction sont des paquets avec aucune instabilité
+            (ils sont stables comme paquets) et ils sont peu ou presque pas d'abstraction. Malheureusement, cela places ces paquets (section, user, destination, service et transaction)
+            dans la "Zone of Pain" puisque leur degré d'abstraction est bas et leur degré d'instabilité est bas ou non-existant. Le paquet transport se trouve entre la
+            "Zone of Pain" et la droite descendante de MainSequence. Pour faire part d'un commentaire, il semble que la métrique pour calculer l'abstraction d'un paquet reste
+            assez vague en tant que telle. Un exemple serai une classe ayant 10 méthodes concretes mais ayant 1 méthode virtuelle et cette dernière serai classé
             comme une classe ayant seulement des méthodes virtuelles (source : https://www.cs.utexas.edu/users/downing/papers/Stability-1996.pdf).
         </p>
 
@@ -782,6 +782,31 @@
         <!-- Fin section : Qualité du design -->
 
         <!-- Début section : Justifications -->
+        <h3>Principes de conception</h3>
+        <p>
+        <strong>Open/Closed Principle </strong><br>
+
+        Dans la conception du système, nous avons grandement utilisé l'abstraction pour implémenter des éléments similaires,
+        mais tout de même distincts. Nous avons utilisé des classes abstraites notamment pour définir les éléments généraux
+        comme Section, SectionCabin, SectionTrain, SectionAirplane, SectionPlace et SectionPlaceSeat
+        puis nous avons implémenter avec des classes concrètes les éléments plus spécifiques propres aux éléments précédents
+        comme SectionCabinInterieure, SectionTrainPremiumClass, SectionAirplaneFirstClass, SectionPlaceNarrowSeat, etc. Cette
+        conception respecte le Open/Closed Principle puisque nous avons étendu les classes générales et abstraites pour définir
+        des éléments spécifiques avec des classes concrètes. De plus, ces classes concètes restent ouvertes à l'extension, si
+        nécessaire. D'autres abstractions similaires ont été utilisées dans notre conception et peuvent être observées dans notre
+        diagramme de classes. <br> <br>
+
+        <strong>Dependancy Inversion Principle </strong><br>
+        Nous utilisions bien le Dependency Inversion Principle(DPI) car la majorité de nos contrôleurs sont dépendants de classes abstraites, par exemple le transportController est dépendant de Transport qui est une classe abstraite, DestinationCourseController est aussi dépendant d'une classe abstraite qui est DestinationCourse, etc. <br><br>
+
+        <strong>Composite Reuse Principle</strong><br>
+        Nous n'utilisons pas bien le Composite Reuse Principle, car on peut le voir quand on attribue le modificateur de prix pour chaque type de section, on récrit le même code, quand on aurait pu créer une classe ModificationPrice qui serait abstrait avec des classe qui extends dans le genre PremierModificationPrice(),EconomiqueModificationPrice, ect.<br><br>
+
+        <strong>Stable Abstractions Principle</strong> <br>
+        On peut voir avec le Graphe IA, que ce principe n'est pratiquement pas respecté. On a presque toutes nos classes dans la dead zone. On espère fortement que c'est une erreur de calcul...<br><br>
+
+        <strong>Stable Dependancies Principle</strong><br>
+        Si on se fit à la section avec le Graphe IA, on peut voir qu'on respecte à la perfection ce principe.</p>
         <h3>
             Justifications:
         </h3>
