@@ -168,10 +168,10 @@
         <li>La conclusion</li>
         </ol>
         <h4>Le couplage</h4>
-        <p>Nous avons remarqué que nos classes pouvaient être regroupé en 3 "types" de classes. Nous avons les classes <strong>objets (abstraites et leurs enfants)</strong>, les classes de <strong>bases de données</strong> et les classes <strong>controleurs</strong>.</p>
-        <p>Pour le type des classes <strong>controleurs</strong> ainsi que les UI, nous remarquons que toutes ces classes ont comme type de couplage un couplage par paquet. La raison est que souvent nous envoyons un objet au complet au controleurs et que seulement une partie des informations de cet objet est utilisée.</p>
+        <p>Nous avons remarqué que nos classes pouvaient être regroupé en 3 "types" de classes. Nous avons les classes <strong>objets (abstraites et leurs enfants)</strong>, les classes de <strong>bases de données</strong> et les classes <strong>contrôleurs</strong>.</p>
+        <p>Pour le type des classes <strong>contrôleurs</strong> ainsi que les UI, nous remarquons que toutes ces classes ont comme type de couplage un couplage par paquet. La raison est que souvent nous envoyons un objet au complet au contrôleurs et que seulement une partie des informations de cet objet est utilisée.</p>
         <dl>
-          <dt><strong>Classes controleurs:</strong></dt>
+          <dt><strong>Classes contrôleurs:</strong></dt>
           <dd>UserController</dd>
           <dd>ServiceController</dd>
           <dd>TransportCompanyController</dd>
@@ -213,7 +213,7 @@
         </dt>
         <h4>Mesure de couplage par CBO</h3>
           <dl>
-            <dt><strong>Classes controleurs:</strong></dt>
+            <dt><strong>Classes contrôleurs:</strong></dt>
             <dd>UserController : 3</dd>
             <dd>ServiceController : 3</dd>
             <dd>TransportCompanyController : 3</dd>
@@ -253,7 +253,14 @@
             <dd>DestinationCourse : 1</dd>
           </dl>
         <p>On peut voir que les résultats des mesures de CBO suivent la même tendance que les types de couplages que nous avons discuté.<br>*sauf pour certaines exeptions où le couplage est très élévé* </p>
-        <p>Pour l'odre d'implémentation et la génération de code, il faudrait suivre en ordre croissant la mesure de CBO des classes à commencer par :<br> <strong>Classes objets</strong> &rarr; <strong>Classes de bases de données</strong> &rarr; <strong>Classes controleurs</strong> &rarr; <strong>Classes UI</strong></p>
+        <p>Pour l'odre d'implémentation et la génération de code, il faudrait suivre en ordre croissant la mesure de CBO des classes à commencer par :<br> <strong>Classes objets</strong> &rarr; <strong>Classes de bases de données</strong> &rarr; <strong>Classes contrôleurs</strong> &rarr; <strong>Classes UI</strong>.</p>
+        <h3>La cohésion</h3>
+        <p>Nous avons fait notre possible pour avoir un cohésion la plus forte possible en ayant des classes qui avait des fonctions précises! Nous allons continuer avec les groupes des classes dans la section couplage.</p>
+        <p>Pour le type des classes <strong>contrôleurs</strong>, nous avons une cohésion communicationnelle, car ce sont tous des modules qui effectuent une série d'actions reliées par la procédure que l'objet, dont le contrôleur est responsable, doit suivre. Les actions que les classes de contrôleurs effectuent opèrent aussi sur ces mêmes objets. La cohésions des classes contrôleurs est donc forte.</p>
+        <p>Pour le type des classes de<strong>base de données</strong>, nous avons une cohésion fonctionnelle, car ce sont tous des modules qui contribue à éxactement une seule tâche soit mettre dans un dictionnaire des objets de même type. Les même opérations peut être réutilisée dans our n'importe quels objets stockés dans une base de données. La cohésions des classes de base de donnée est donc très forte.</p>
+        <p>Pour le type des classes de<strong>objets (abstraites et leurs enfants)</strong>, nous avons une cohésion informationnelle, car ce sont tous des modules qui effectuent plusieurs actions différentes mais qui travail sur le même obejts. La cohésions des classes des objects est donc forte.</p>
+        <p>Pour le type des classes de<strong>UI</strong>, la cohésions des classes des UI est forte.</p>
+
 
         <h3>Discussion du fardeau des classes</h3>
         <p>Calcul du fardeau des classes</p>
