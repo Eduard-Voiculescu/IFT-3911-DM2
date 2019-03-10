@@ -80,8 +80,15 @@
                             <li>Contraintes OCL [7%]<br>
                                 <ul>
                                     <li>Le port de départ et d'arrivée doit être le même [OCL].</li>
+                                    <p>context DestinationCourseCruise inv:</p>
+                                    <p>self.destinationDepartur = self.destinationArrival</p>
                                     <li>Un paquebot peut être assigné à plusieurs itinéraires tant qu'ils ne se chevauchent pas [OCL].</li>
+                                    <p>context DestinationCourseCruise inv:</p>
+                                    <p>self.allInstances()->forAll(d1,d2 | d1.transportId = d2.transportId implies d1.arrivalTime < d2.departureTime OR d1.departureTime > d2.arrivalTime)</p>
                                     <li>Réserver ne peut se faire que pour un siège/cabine libre [OCL].</li>
+                                    <p>context SectionPlace::reserved():Boolean</p>
+                                    <p>    pre : self.status = "FREE"<br>
+                                        post : self.status = "RESERVED"</p>
                                 </ul>
                             </li>
                             <li>Identifications des modules réutilisables [5%]</li>
@@ -660,18 +667,18 @@
         </table>
         <br>
         <p>
-            Notre système de gestion de réservation généralisé est modélisé en MVC (Model View Controller). Nous avons fait en sorte 
+            Notre système de gestion de réservation généralisé est modélisé en MVC (Model View Controller). Nous avons fait en sorte
             de bien séparer les tâches que les différentes parties de notre système doit faire. Le niveau de sophistication d'une majorité
             des classes est du domaine de métier. Puisque c'est un système assez précis en tant que tel, les classes utiles sont plus spécifiques
             pour un seul type de métier. Le niveau de réutilisation des classes du domaine de métier est variant entre moyenne et élevé (pour certain cas).
             Les controlleurs : UserController, ReservationController, TransactionController, TransportController, DestinationCourseController, ServiceController et TransportCompanyController
-            sont tous des classes faisant partie du domaine d'application. La raison est que ces contrôlleurs reste assez restictif en terme de réutilisation. 
+            sont tous des classes faisant partie du domaine d'application. La raison est que ces contrôlleurs reste assez restictif en terme de réutilisation.
             Ces contrôleurs sont des classes utilies pour l'application de notre système de gestion de réservation généralisé. Peut-etre que le contôlleur de
             TransactionController pourrait être plus du type domaine de métier puisque ce dernier pourrait être appliqué dans de différent domaine. Mais face à notre
             système et particulièrement face aux spécifications que ce dernier offre, nous l'avons toutefois classifé comme faisant partie du domaien d'application.
-            Pour les classes de databases : UserDatabase, ReservationDatabase, TransactionDatabase, TransportDatabase, DestinationCourseDatabase, ServiceDatabase, TransportCompanyDatabase, 
-            ces dernières font parties du domaine d'architecture avec une réutilisation moyenne. Bien évidemment, puisque nous avons fait un approche MVC et 
-            puisque nous avons fait beaucoup d'héritage d'objet, il y a certaine classe qui ont un fardeau assez élevé. 
+            Pour les classes de databases : UserDatabase, ReservationDatabase, TransactionDatabase, TransportDatabase, DestinationCourseDatabase, ServiceDatabase, TransportCompanyDatabase,
+            ces dernières font parties du domaine d'architecture avec une réutilisation moyenne. Bien évidemment, puisque nous avons fait un approche MVC et
+            puisque nous avons fait beaucoup d'héritage d'objet, il y a certaine classe qui ont un fardeau assez élevé.
         </p>
 
         <h3>Graphe IA et justification</h3>
@@ -692,7 +699,7 @@
                 d'une compagnie quelconque construisent un transport, on peut pas les modifier. C'est des objet immutables.
             </li>
             <li>
-                Prenez note que pour le calcul du fardeau, nous n'avons pas compté void comme étant un type en Java. Puisque c'est un 
+                Prenez note que pour le calcul du fardeau, nous n'avons pas compté void comme étant un type en Java. Puisque c'est un
                 "uninstantiable placeholder" nous assumons que c'est pas un type. Voir la doc pour plus d'information: https://docs.oracle.com/javase/7/docs/api/java/lang/Void.html <br>
                 De plus, nous avons considéré HashMap et List comme étant des classes de fondation avec un fardeau de 0.
             </li>
