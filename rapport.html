@@ -174,389 +174,390 @@
             <tbody>
                 <tr>
                     <td>User</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(String) + 1 + F(Date) + 1 = 0 + 1 + 0 + 1 = 2</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>UserClient</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(User) + 1 = 3</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>UserAdmin</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(User) + 1 = 3</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>UserDatabase</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(HashMap) + 1 + F(User) + 1 = 0 + 1 + 2 + 1 = 4</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>UserController</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(UserDatabase) + 1 = 4 + 1 = 5</td>
+                    <td>Faible</td>
+                    <td>Application</td>
                 </tr>
                 <tr>
                     <td>SystemUI</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(UserController) + 1 + F(ClientUI) + 1 + F(AdminUI) + 1 = 5 + 1 + 38 + 1 + 38 + 1 = 84</td>
+                    <td>Élevée</td>
+                    <td>Application</td>
                 </tr>
                 <tr>
                     <td>ClientUI</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(ReservationController) + 1 = 37 + 1 = 38</td>
+                    <td>Élevée</td>
+                    <td>Application</td>
                 </tr>
                 <tr>
                     <td>AdminUI</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(ServiceController) + 1 + F(TransactionController) + 1 + F(DestinationCourseController) + 1 = 6 + 1 + 22 + 1 + 7 + 1 = 38</td>
+                    <td>Élevée</td>
+                    <td>Application</td>
                 </tr>
                 <tr>
                     <td>ReservationController</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(ReservationDatabase) + 1 + F(DestinationCourseController) + 1 + F(TransactionController) + 1 = 5 + 1 + 7 + 1 + 22 + 1 = 37</td>
+                    <td>Faible</td>
+                    <td>Application</td>
                 </tr>
                 <tr>
                     <td>ReservationDatabase</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(HashMap) + 1 + F(Reservation) + 1 = 0 + 1 + 3 + 1 = 5</td>
+                    <td>Faible</td>
+                    <td>Application</td>
                 </tr>
                 <tr>
                     <td>Reservation</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(String) + 1 + F(ReservationStatus) + 1 + F(Date) + 1 = 0 + 1 + 0 + 1 + 0 + 1 = 3</td>
+                    <td>Élevée</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>TransactionController</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(TransactionDatabase) + 1 + F(ReservationController) + 1 = 5 + 1 + 15 + 1 = 22</td>
+                    <td>Faible</td>
+                    <td>Application</td>
                 </tr>
                 <tr>
                     <td>TransactionDatabase</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(Transaction) + 1 + F(HashMap) + 1 = 3 + 1 + 0 + 1 = 5</td>
+                    <td>Moyenne</td>
+                    <td>Architecture</td>
                 </tr>
                 <tr>
                     <td>Transaction</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(String) + 1 + F(Double) + 1 + F(Date) + 1 = 0 + 1 + 0 + 1 + 0 + 1 = 3</td>
+                    <td>Élevée</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>TransportController</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(TransportDatabase) + 1 + F(Boolean) + 1 = 9 + 1 + 0 + 1 = 11</td>
+                    <td>Faible</td>
+                    <td>Application</td>
                 </tr>
                 <tr>
                     <td>TransportDatabase</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(HashMap) + 1 + F(Transport) + 1 = 0 + 1 + 7 + 1 = 9</td>
+                    <td>Moyenne</td>
+                    <td>Architecture</td>
                 </tr>
                 <tr>
                     <td>Transport</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(String) + 1 + F(Section) + 1 + F(List) + 1 = 0 + 1 + 4 + 1 + 0 + 1 = 7</td>
+                    <td>Élevée</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>TransportAirplane</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(Transport) + 1 + F(int) + 1 = 7 + 1 + 0 + 1 = 9</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>TransportBoat</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(Transport) + 1 + F(int) + 1 = 7 + 1 + 0 + 1 = 9</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>TransportTrain</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(Transport) + 1 + F(int) + 1 = 7 + 1 + 0 + 1 = 9</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>Section</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(Double) + 1 + F(SectionPlace) + 1 + F(List) + 1 = 0 + 1 + 1 + 1 + 0 + 1 = 4</td>
+                    <td>Élevée</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>SectionCabin</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(Section) + 1 + F(int) + 1 = 4 + 1 + 0 + 1 = 6</td>
+                    <td>Élevée</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>SectionCabinInterieur</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(SectionCabin) + 1 = 6 + 1 = 7</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>SectionCabinOcean</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(SectionCabin) + 1 = 6 + 1 = 7</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>SectionCabinSuite</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(SectionCabin) + 1 = 6 + 1 = 7</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>SectionCabinFamille</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(SectionCabin) + 1 = 6 + 1 = 7</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>SectionCabinDeluxe</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(SectionCabin) + 1 = 6 + 1 = 7</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>SectionAirplane</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(Section) + 1 = 4 + 1 = 5</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>SectionAirplaneFirstClass</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(SectionAirplane) + 1 = 5 + 1 = 6</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>SectionAirplaneBuisnessClass</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(SectionAirplane) + 1 = 5 + 1 = 6</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>SectionAirplanePremiumClass</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(SectionAirplane) + 1 = 5 + 1 = 6</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>SectionAirplaneEconomicClass</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(SectionAirplane) + 1 = 5 + 1 = 6</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>SectionTrain</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(Section) + 1 + F(SectionPlaceNarrowSeat) + 1 = 4 + 1 + 10 + 1 = 16</td>
+                    <td>Élevée</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>SectionTrainPremium</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(SectionTrain) + 1 = 16 + 1 = 17</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>SectionTrainEconomicClass</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(SectionTrain) + 1 = 16 + 1 = 17</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>SectionPlace</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(String) + 1 = 0 + 1 = 1</td>
+                    <td>Élevée</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>SectionPlaceCabin</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(SectionPlace) + 1 + F(int) + 1 + F(Status) + 1 = 1 + 1 + 0 + 1 + 0 + 1 = 4</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>SectionPlaceSeat</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(SectionPlace) + 1 + F(Position) + 1 + F(Time) + 1 + F(SectionAirplane) + 1 = 1 + 1 + 0 + 1 + 5 + 1 = 9</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>SectionPlaceNarrowSeat</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(SectionPlaceSeat) + 1 = 10</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>SectionPlaceConfortSeat</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(SectionPlaceSeat) + 1 = 10</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>SectionPlaceMediumSeat</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(SectionPlaceSeat) + 1 = 10</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>SectionPlaceLargeSeat</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(SectionPlaceSeat) + 1 = 10</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>DestinationCourseController</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(DestinationCourseDatabase) + 1 = 6 + 1 = 7</td>
+                    <td>Faible</td>
+                    <td>Application</td>
                 </tr>
                 <tr>
                     <td>DestinationCourseDatabase</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(HashMap) + 1 + F(DestinationCourse) + 1 = 0 + 1 + 4 + 1 = 6</td>
+                    <td>Moyenne</td>
+                    <td>Architecture</td>
                 </tr>
                 <tr>
                     <td>DestinationCourse</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(Date) + 1 + F(Double) + 1 + F(City) + 1 = 0 + 1 + 0 + 1 + 1 + 1 = 4</td>
+                    <td>Élevée</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>DestinationCourseFlight</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(DestinationCourse) + 1 = 4 + 1 = 5</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>DestinationCourseCruise</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(DestinationCourse) + 1 = 4 + 1 = 5</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>DestinationCourseTrain</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(DestinationCourse) + 1 = 4 + 1 = 5</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>ServiceController</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(ServiceDatabase) + 1 + F(Boolean) + 1 = 4 + 1 + 0 + 1 = 6</td>
+                    <td>Faible</td>
+                    <td>Application</td>
                 </tr>
                 <tr>
                     <td>ServiceDatabase</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(HashMap) + 1 + F(Service) + 1 = 0 + 1 + 2 + 1 = 4</td>
+                    <td>Moyenne</td>
+                    <td>Architecture</td>
                 </tr>
                 <tr>
                     <td>Service</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(City) + 1 = 2</td>
+                    <td>Élevée</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>ServiceAirport</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(Service) + 1 = 3</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>ServicePort</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(Service) + 1 = 3</td>
+                    <td>ÉlMoyenneevée</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>ServiceStation</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(Service) + 1 = 3</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>City</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(String) + 1 = 1</td>
+                    <td>Élevée</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>TransportCompanyController</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(TransportCompanyDatabase) + 1 + F(Boolean) + 1 = 3 + 1 + 0 + 1 = 5</td>
+                    <td>Faible</td>
+                    <td>Application</td>
                 </tr>
                 <tr>
                     <td>TransportCompanyDatabase</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(HashMap) + 1 + F(TransportCompany) + 1 = 1 + 1 + 1 = 3</td>
+                    <td>Moyenne</td>
+                    <td>Architecture</td>
                 </tr>
                 <tr>
                     <td>TransportCompany</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(String) + 1 = 1</td>
+                    <td>Élevée</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>TransportCompanyAirline</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(TransportCompany) + 1 = 1 + 1 = 2</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>TransportCompanyCruise</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(TransportCompany) + 1 = 1 + 1 = 2</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
                 <tr>
                     <td>TransportCompanyTrain</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>F(TransportCompany) + 1 = 1 + 1 = 2</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
+                </tr>
+                <tr>
+                    <td>ReservationStatus (Enumeration)</td>
+                    <td>0</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
+                </tr>
+                <tr>
+                    <td>Status (Enumeration)</td>
+                    <td>0</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
+                </tr>
+                <tr>
+                    <td>Position (Enumeration)</td>
+                    <td>0</td>
+                    <td>Moyenne</td>
+                    <td>Métier</td>
                 </tr>
             </tbody>
         </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         <h3>Graphe IA et justification</h3>
         <h3>Justification de l'application des principes de conception</h3>
@@ -574,6 +575,11 @@
                 pas le but de permettre cela. Une fois que nous avons un moyen de transport, ce dernier sera prséent dans le système pour
                 un bon nombre d'année (bris/problème quelconque/etc.). Nous avons surtout vue cela que lorsque les ingénieurs
                 d'une compagnie quelconque construisent un transport, on peut pas les modifier. C'est des objet immutables.
+            </li>
+            <li>
+                Prenez note que pour le calcul du fardeau, nous n'avons pas compté void comme étant un type en Java. Puisque c'est un 
+                "uninstantiable placeholder" nous assumons que c'est pas un type. Voir la doc pour plus d'information: https://docs.oracle.com/javase/7/docs/api/java/lang/Void.html <br>
+                De plus, nous avons considéré HashMap et List comme étant des classes de fondation avec un fardeau de 0.
             </li>
         </ul>
         <!-- Fin section : Justifications-->
