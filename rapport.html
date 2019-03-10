@@ -294,7 +294,7 @@
                     <td>UserDatabase</td>
                     <td>F(HashMap) + 1 + F(User) + 1 = 0 + 1 + 2 + 1 = 4</td>
                     <td>Moyenne</td>
-                    <td>Métier</td>
+                    <td>Architecture</td>
                 </tr>
                 <tr>
                     <td>UserController</td>
@@ -329,8 +329,8 @@
                 <tr>
                     <td>ReservationDatabase</td>
                     <td>F(HashMap) + 1 + F(Reservation) + 1 = 0 + 1 + 3 + 1 = 5</td>
-                    <td>Faible</td>
-                    <td>Application</td>
+                    <td>Moyenne</td>
+                    <td>Architecture</td>
                 </tr>
                 <tr>
                     <td>Reservation</td>
@@ -658,6 +658,21 @@
                 </tr>
             </tbody>
         </table>
+        <br>
+        <p>
+            Notre système de gestion de réservation généralisé est modélisé en MVC (Model View Controller). Nous avons fait en sorte 
+            de bien séparer les tâches que les différentes parties de notre système doit faire. Le niveau de sophistication d'une majorité
+            des classes est du domaine de métier. Puisque c'est un système assez précis en tant que tel, les classes utiles sont plus spécifiques
+            pour un seul type de métier. Le niveau de réutilisation des classes du domaine de métier est variant entre moyenne et élevé (pour certain cas).
+            Les controlleurs : UserController, ReservationController, TransactionController, TransportController, DestinationCourseController, ServiceController et TransportCompanyController
+            sont tous des classes faisant partie du domaine d'application. La raison est que ces contrôlleurs reste assez restictif en terme de réutilisation. 
+            Ces contrôleurs sont des classes utilies pour l'application de notre système de gestion de réservation généralisé. Peut-etre que le contôlleur de
+            TransactionController pourrait être plus du type domaine de métier puisque ce dernier pourrait être appliqué dans de différent domaine. Mais face à notre
+            système et particulièrement face aux spécifications que ce dernier offre, nous l'avons toutefois classifé comme faisant partie du domaien d'application.
+            Pour les classes de databases : UserDatabase, ReservationDatabase, TransactionDatabase, TransportDatabase, DestinationCourseDatabase, ServiceDatabase, TransportCompanyDatabase, 
+            ces dernières font parties du domaine d'architecture avec une réutilisation moyenne. Bien évidemment, puisque nous avons fait un approche MVC et 
+            puisque nous avons fait beaucoup d'héritage d'objet, il y a certaine classe qui ont un fardeau assez élevé. 
+        </p>
 
         <h3>Graphe IA et justification</h3>
         <h3>Justification de l'application des principes de conception</h3>
