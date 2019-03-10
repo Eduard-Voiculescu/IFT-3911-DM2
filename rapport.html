@@ -80,15 +80,11 @@
                             <li>Contraintes OCL [7%]<br>
                                 <ul>
                                     <li>Le port de départ et d'arrivée doit être le même [OCL].</li>
-                                    <p>context DestinationCourseCruise inv:</p>
-                                    <p>self.destinationDepartur = self.destinationArrival</p>
+
                                     <li>Un paquebot peut être assigné à plusieurs itinéraires tant qu'ils ne se chevauchent pas [OCL].</li>
-                                    <p>context DestinationCourseCruise inv:</p>
-                                    <p>self.allInstances()->forAll(d1,d2 | d1.transportId = d2.transportId implies d1.arrivalTime < d2.departureTime OR d1.departureTime > d2.arrivalTime)</p>
+
                                     <li>Réserver ne peut se faire que pour un siège/cabine libre [OCL].</li>
-                                    <p>context SectionPlace::reserved():Boolean</p>
-                                    <p> pre : self.status = "FREE"<br>
-                                        post : self.status = "RESERVED"</p>
+
                                 </ul>
                             </li>
                             <li>Identifications des modules réutilisables [5%]</li>
@@ -158,8 +154,15 @@
 
         <h4>Contraintes OCL</h4>
         <p>Le port de départ et d'arrivée doit être le même</p>
+        <p>context DestinationCourseCruise inv:</p>
+        <p>self.destinationDepartur = self.destinationArrival</p>
         <p>Un paquebot peut être assigné à plusieurs itinéraires tant qu'ils ne se chevauchent pas.</p>
+        <p>context DestinationCourseCruise inv:</p>
+        <p>self.allInstances()->forAll(d1,d2 | d1.transportId = d2.transportId implies d1.arrivalTime < d2.departureTime OR d1.departureTime > d2.arrivalTime)</p>
         <p>Réserver ne peut se faire que pour un siège/cabine libre.</p>
+        <p>context SectionPlace::reserved():Boolean</p>
+        <p> pre : self.status = "FREE"<br>
+            post : self.status = "RESERVED"</p>
 
         <h4>Identifications des modules réutilisables</h4>
         <!-- Fin section : Design logiciel-->
