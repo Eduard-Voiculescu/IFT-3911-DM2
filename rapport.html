@@ -796,6 +796,13 @@
         nécessaire. D'autres abstractions similaires ont été utilisées dans notre conception et peuvent être observées dans notre
         diagramme de classes. <br> <br>
 
+        <strong>Single Responsibility Principle</strong><br>
+        Nous avons élaboré une conception selon laquelle chaque classe a une seule fonctionnalité. En effet, les classes de modèle
+        servent uniquement de modèle, les classes Database servent uniquement à stocker de l'information et les classes de vue servent 
+        uniquement à l'affichage. Cela fait en sorte que si nous voudrions ajouter une autre fonctionnalité à une de ces classes, 
+        nous devrons créer une nouvelle classe dans le but de préserver le principe de responsabilité unique. Donc, notre conception
+        respecte le Single Responsibility Principle.<br><br>
+
         <strong>Dependancy Inversion Principle </strong><br>
         Nous utilisions bien le Dependency Inversion Principle(DPI) car la majorité de nos contrôleurs sont dépendants de classes abstraites, par exemple le transportController est dépendant de Transport qui est une classe abstraite, DestinationCourseController est aussi dépendant d'une classe abstraite qui est DestinationCourse, etc. <br><br>
 
@@ -806,7 +813,13 @@
         On peut voir avec le Graphe IA, que ce principe n'est pratiquement pas respecté. On a presque toutes nos classes dans la dead zone. On espère fortement que c'est une erreur de calcul...<br><br>
 
         <strong>Stable Dependancies Principle</strong><br>
-        Si on se fit à la section avec le Graphe IA, on peut voir qu'on respecte à la perfection ce principe.</p>
+        Si on se fit à la section avec le Graphe IA, on peut voir qu'on respecte à la perfection ce principe.<br><br>
+
+        <strong>Acyclic Dependency Principle</strong><br>
+        En se référant au diagramme de paquets, on peut constater que les dépendances entre les paquets ne forment pas de cycles et donc
+        notre conception respecte le Acyclic Dependency Principle.
+        </p>
+        
         <h3>
             Justifications:
         </h3>
