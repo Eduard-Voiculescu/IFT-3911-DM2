@@ -737,6 +737,10 @@
             </tbody>
         </table>
         <h4>Résumé</h4>
+        <p>
+            Selon le principe de Stable Dependencies Principle, un paquet doit dépendre uniquement de paquets <b>plus stables</b> que lui. Cela 
+            a pour but de limiter l'impact des changements et cela maximise la stabilité globale de l'application
+        </p>
         <p>User(instabilité = 0) dépend de rien.<br><br>
 
         UI(instabilité = 1) dépend de User(instabilité = 0) , ce qui est parfait, car UI dépend d'un paquet plus stable que lui même.<br>
@@ -777,8 +781,20 @@
         </p>
 
         <p>Nous avons le paquet UI qui dépend du paquet User </p>
-
-
+        
+        <h3>Justification de l'application des principes de conception </h3>
+        <h4>Open/Closed Principle:</h4>
+        <p>
+            Dans la conception du système, nous avons grandement utilisé l'abstraction pour implémenter des éléments similaires,
+            mais tout de même distincts. Nous avons utilisé des classes abstraites notamment pour définir les éléments généraux 
+            comme Section, SectionCabin, SectionTrain, SectionAirplane, SectionPlace et SectionPlaceSeat
+            puis nous avons implémenter avec des classes concrètes les éléments plus spécifiques propres aux éléments précédents 
+            comme SectionCabinInterieure, SectionTrainPremiumClass, SectionAirplaneFirstClass, SectionPlaceNarrowSeat, etc. Cette
+            conception respecte le Open/Closed Principle puisque nous avons étendu les classes générales et abstraites pour définir
+            des éléments spécifiques avec des classes concrètes. De plus, ces classes concètes restent ouvertes à l'extension, si 
+            nécessaire. D'autres abstractions similaires ont été utilisées dans notre conception et peuvent être observées dans notre
+            diagramme de classes.
+        </p>
         <!-- Fin section : Qualité du design -->
 
         <!-- Début section : Justifications -->
