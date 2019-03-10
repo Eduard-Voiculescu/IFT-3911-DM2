@@ -146,8 +146,8 @@
         <p>Payer un siège/cabine</p>
         <img src="design/paySeat.jpg"/>
         <p>Annuler une réservation</p>
-        <img src="design/cancelReservation.jpg"/>7
-        <p>changer une réservation</p>
+        <img src="design/cancelReservation.jpg"/>
+        <p>Changer une réservation</p>
         <img src="design/changeReservation.jpg"/>
         <h4>Diagramme de paquets</h4>
         <img src="design/packageDiagram.jpg"/>
@@ -155,14 +155,14 @@
         <h4>Contraintes OCL</h4>
         <p>Le port de départ et d'arrivée doit être le même</p>
         <p>context DestinationCourseCruise inv:</p>
-        <p>self.destinationDepartur = self.destinationArrival</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;self.destinationDeparture = self.destinationArrival</p>
         <p>Un paquebot peut être assigné à plusieurs itinéraires tant qu'ils ne se chevauchent pas.</p>
         <p>context DestinationCourseCruise inv:</p>
-        <p>self.allInstances()->forAll(d1,d2 | d1.transportId = d2.transportId implies d1.arrivalTime < d2.departureTime OR d1.departureTime > d2.arrivalTime)</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;self.allInstances()->forAll(d1,d2 | d1.transportId = d2.transportId implies d1.arrivalTime < d2.departureTime OR d1.departureTime > d2.arrivalTime)</p>
         <p>Réserver ne peut se faire que pour un siège/cabine libre.</p>
         <p>context SectionPlace::reserved():Boolean</p>
-        <p> pre : self.status = "FREE"<br>
-            post : self.status = "RESERVED"</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;pre : self.status = "FREE"<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;post : self.status = "RESERVED"</p>
 
         <h4>Identifications des modules réutilisables</h4>
         <!-- Fin section : Design logiciel-->
@@ -783,21 +783,7 @@
         <p>Nous avons le paquet UI qui dépend du paquet User </p>
         
         <h3>Justification de l'application des principes de conception </h3>
-        <h4>Open/Closed Principle:</h4>
-        <p>
-            Dans la conception du système, nous avons grandement utilisé l'abstraction pour implémenter des éléments similaires,
-            mais tout de même distincts. Nous avons utilisé des classes abstraites notamment pour définir les éléments généraux 
-            comme Section, SectionCabin, SectionTrain, SectionAirplane, SectionPlace et SectionPlaceSeat
-            puis nous avons implémenter avec des classes concrètes les éléments plus spécifiques propres aux éléments précédents 
-            comme SectionCabinInterieure, SectionTrainPremiumClass, SectionAirplaneFirstClass, SectionPlaceNarrowSeat, etc. Cette
-            conception respecte le Open/Closed Principle puisque nous avons étendu les classes générales et abstraites pour définir
-            des éléments spécifiques avec des classes concrètes. De plus, ces classes concètes restent ouvertes à l'extension, si 
-            nécessaire. D'autres abstractions similaires ont été utilisées dans notre conception et peuvent être observées dans notre
-            diagramme de classes.
-        </p>
-        <!-- Fin section : Qualité du design -->
-
-        <!-- Début section : Justifications -->
+        
         <h3>Principes de conception</h3>
         <p>
         <strong>Open/Closed Principle </strong><br>
@@ -835,7 +821,9 @@
         En se référant au diagramme de paquets, on peut constater que les dépendances entre les paquets ne forment pas de cycles et donc
         notre conception respecte le Acyclic Dependency Principle.
         </p>
-        
+        <!-- Fin section : Qualité du design -->
+
+        <!-- Début section : Justifications -->
         <h3>
             Justifications:
         </h3>
