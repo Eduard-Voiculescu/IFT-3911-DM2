@@ -263,9 +263,9 @@
         <h3>La cohésion</h3>
         <p>Nous avons fait notre possible pour avoir un cohésion la plus forte possible en ayant des classes qui avait des fonctions précises! Nous allons continuer avec les groupes des classes dans la section couplage.</p>
         <p>Pour le type des classes <strong>contrôleurs</strong>, nous avons une cohésion communicationnelle, car ce sont tous des modules qui effectuent une série d'actions reliées par la procédure que l'objet, dont le contrôleur est responsable, doit suivre. Les actions que les classes de contrôleurs effectuent opèrent aussi sur ces mêmes objets. La cohésions des classes contrôleurs est donc forte.</p>
-        <p>Pour le type des classes de<strong>base de données</strong>, nous avons une cohésion fonctionnelle, car ce sont tous des modules qui contribue à éxactement une seule tâche soit mettre dans un dictionnaire des objets de même type. Les même opérations peut être réutilisée dans our n'importe quels objets stockés dans une base de données. La cohésions des classes de base de donnée est donc très forte.</p>
-        <p>Pour le type des classes de<strong>objets (abstraites et leurs enfants)</strong>, nous avons une cohésion informationnelle, car ce sont tous des modules qui effectuent plusieurs actions différentes mais qui travail sur le même obejts. La cohésions des classes des objects est donc forte.</p>
-        <p>Pour le type des classes de<strong>UI</strong>, la cohésions des classes des UI est forte.</p>
+        <p>Pour le type des classes de <strong>base de données</strong>, nous avons une cohésion fonctionnelle, car ce sont tous des modules qui contribue à éxactement une seule tâche soit mettre dans un dictionnaire des objets de même type. Les même opérations peut être réutilisée dans our n'importe quels objets stockés dans une base de données. La cohésions des classes de base de donnée est donc très forte.</p>
+        <p>Pour le type des classes de <strong>objets (abstraites et leurs enfants)</strong>, nous avons une cohésion informationnelle, car ce sont tous des modules qui effectuent plusieurs actions différentes mais qui travail sur le même obejts. La cohésions des classes des objects est donc forte.</p>
+        <p>Pour le type des classes de <strong>UI</strong>, la cohésions des classes des UI est forte.</p>
 
 
         <h3>Discussion du fardeau des classes</h3>
@@ -311,25 +311,25 @@
                 </tr>
                 <tr>
                     <td>SystemUI</td>
-                    <td>F(UserController) + 1 + F(ClientUI) + 1 + F(AdminUI) + 1 = 5 + 1 + 38 + 1 + 38 + 1 = 84</td>
+                    <td>F(UserController) + 1 + F(ClientUI) + 1 + F(AdminUI) + 1 = 5 + 1 + 22 + 1 + 22 + 1 = 49</td>
                     <td>Élevée</td>
                     <td>Application</td>
                 </tr>
                 <tr>
                     <td>ClientUI</td>
-                    <td>F(ReservationController) + 1 = 37 + 1 = 38</td>
+                    <td>F(ReservationController) + 1 = 21 + 1 = 22</td>
                     <td>Élevée</td>
                     <td>Application</td>
                 </tr>
                 <tr>
                     <td>AdminUI</td>
-                    <td>F(ServiceController) + 1 + F(TransactionController) + 1 + F(DestinationCourseController) + 1 = 6 + 1 + 22 + 1 + 7 + 1 = 38</td>
+                    <td>F(ServiceController) + 1 + F(TransactionController) + 1 + F(DestinationCourseController) + 1 = 6 + 1 + 6 + 1 + 7 + 1 = 22</td>
                     <td>Élevée</td>
                     <td>Application</td>
                 </tr>
                 <tr>
                     <td>ReservationController</td>
-                    <td>F(ReservationDatabase) + 1 + F(DestinationCourseController) + 1 + F(TransactionController) + 1 = 5 + 1 + 7 + 1 + 22 + 1 = 37</td>
+                    <td>F(ReservationDatabase) + 1 + F(DestinationCourseController) + 1 + F(TransactionController) + 1 = 5 + 1 + 7 + 1 + 6 + 1 = 21</td>
                     <td>Faible</td>
                     <td>Application</td>
                 </tr>
@@ -347,7 +347,7 @@
                 </tr>
                 <tr>
                     <td>TransactionController</td>
-                    <td>F(TransactionDatabase) + 1 + F(ReservationController) + 1 = 5 + 1 + 15 + 1 = 22</td>
+                    <td>F(TransactionDatabase) + 1 = 5 + 1 = 6</td>
                     <td>Faible</td>
                     <td>Application</td>
                 </tr>
@@ -665,7 +665,6 @@
                 </tr>
             </tbody>
         </table>
-        <br>
         <p>
             Notre système de gestion de réservation généralisé est modélisé en MVC (Model View Controller). Nous avons fait en sorte
             de bien séparer les tâches que les différentes parties de notre système doit faire. Le niveau de sophistication d'une majorité
@@ -683,6 +682,61 @@
 
         <h3>Graphe IA et justification</h3>
         <h3>Justification de l'application des principes de conception</h3>
+
+        <table>
+            <thead>
+                <th>Instabilité</th>
+                <th>Abstabilité</th>
+                <th>Paquet</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Nous avons le paquet UI qui dépend du paquet User </p>
+
+
+
+
         <!-- Fin section : Qualité du design -->
 
         <!-- Début section : Justifications -->
